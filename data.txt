@@ -1,0 +1,4 @@
+{"user":"ADMIN"}
+{"user":"user","pass":"$2b$10$khwC3w1fKZlmP0XU9qZbYOetaiZmijPT9FnUY.40ambePIcjdqj1C","block":false,"passlimit":false}
+{"user":"student","pass":"$2b$10$4RfcYEe0h3UAWpc6MXojbOWA3XhUPhlPDLPK2nQyKnm5YLnwDvetK","block":true,"passlimit":true}
+{"user":"kolya","pass":"$2b$10$fIZHATd/xKMPUOcAVoyibuiPkSSOW3N8W/JZqaggCtZbTvQ9VHOcu","block":false,"passlimit":true}

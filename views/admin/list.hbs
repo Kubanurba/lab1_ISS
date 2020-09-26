@@ -1,0 +1,36 @@
+<div class="col-md-10 offset-md-1">
+    <div class="row" style="margin: 10px;">  
+        <h3>List of Users</h3>
+    </div>
+<div class="row">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>IsBlocked?</th>
+            <th>PassLimited?</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each users}}
+        <tr>
+            <td>{{this.username}}</td>
+            <td>{{this.userpass}}</td>
+            <td>{{this.userblock}}</td>
+            <td>{{this.passlimit}}</td>
+            <td>
+                <a href="/auth/admin/user/{{this.username}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/auth/admin/delete/{{this.username}}" onclick="return confirm('Are you sure to delete this user ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table> 
+</div>
+    <div class="row">
+        <a href="/auth/main/ADMIN" class="btn btn-info" role="button" style="margin-right: 5px;"><i class="fa fa-home"></i> Home</a>
+        <a href="/auth/admin/user" class="btn btn-success " role="button"><i class="fa fa-plus"></i> Create New</a>
+    </div>
+</div>

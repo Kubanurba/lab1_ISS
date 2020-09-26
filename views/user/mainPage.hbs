@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light ml" style="margin: 20px 40px 40px 0px">
+    <a class="navbar-brand" href="#">Hello, {{name}}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Menu
+        </a>
+        <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenu" style="padding: 10px;">
+          <a class="dropdown-item"  href="/auth/change/{{name}}">Change Password</a>
+          <a class="dropdown-item"  href="/auth/admin/list" {{access}}>View list of users</a>
+          <a class="dropdown-item"  href="/auth/file" {{access}}>Save Data in File</a>
+          <a class="dropdown-item"  href="/auth/logout">End Session</a>
+          <a class="dropdowm-item"  href="/auth/logout" onclick="alert('Goodbye!');">Exit</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownHelp" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Help
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownHelp"  style="padding: 10px;">
+            <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#infoTable" style="color: gray;"> About</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="modal fade" id="infoTable" tabindex="-1" role="dialog" aria-labelledby="infoTableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="infoTableTitle">Info about author and individual task</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Author: Anastasiia Baturkina, BS-71
+            Individual task: Password must contain letters and arithmetic signs</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#if error}}
+<div class="row">
+    <div class="fixed-bottom alert">
+        <h6>You should change the password. It does not fit requirements.condition...</h6>
+    </div>
+</div>
+{{/if}}
